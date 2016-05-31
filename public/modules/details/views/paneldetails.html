@@ -1,0 +1,46 @@
+<div>
+    <div>
+        <div class="block block-details">
+          <ul class="clearfix">
+            <li class="package-image"><img data-ng-src="{{packageInfos.image}}" /></li>
+            <li class="package-infos">
+              <ul>
+                <li  class="col-md-9">
+                  <h1 class="package-name" data-ng-bind="packageInfos.name"></h1>
+                  <p class="package-description" data-ng-bind="packageInfos.description"></p>
+                </li>
+                <li class="col-md-3">
+                  <span class="package-price" data-ng-bind="packageInfos.pricePerPerson"></span>
+                </li>
+              </ul>
+            </li>   
+         </div>
+        <div class="items-selected" data-ng-repeat="item in itemsSelection.selected" data-ng-show="itemsSelection.selected.length > 0">
+            <h2 data-ng-bind="item.name"></h2>
+            <div class="items-selected-row" data-ng-repeat="options in item.options">
+            
+                <input data-ng-model="options.quantity"/>
+                <span data-ng-bind="options.name"></span>
+               <span  data-ng-repeat="dietaryRequirements in options.dietaryRequirements">
+                    <img data-ng-src="https://citypantry.com/{{dietaryRequirements.icon}}" />
+               </span>
+                
+            </div>
+        </div>
+        <div  class="items-unselected" data-ng-repeat="item in itemsSelection.unselected" data-ng-show="itemsSelection.unselected.length > 0">
+            <h2 data-ng-bind="item.name"></h2>
+            <div class="items-unselected-row" data-ng-repeat="options in item.options">
+               <p>
+                <span data-ng-bind="options.name"></span>
+               </p>
+            </div>
+        </div>
+    </div>
+    <div data-ng-show="messages.length">
+      <ul class="message-panel error">
+        <li data-ng-repeat="message in messages track by $index">
+          <span data-ng-bind="message"></span>
+        </li>
+      </ul>
+    </div>
+</div>

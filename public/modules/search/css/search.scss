@@ -1,0 +1,64 @@
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+body {
+	    background: url(https://www.caterwings.co.uk/img/external/gb/cache/4/d/8/e/f/4d8efcdc99c90911bcc6dc401d951b04cbdff9e8.jpg?version=178);
+    background-size: cover;
+    background-position: 50% 0;
+
+}
+.block-search {
+	padding: 20px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    max-width: 500px;
+    margin:0 auto;
+    background: #fff;
+    box-shadow: 0px 0px 4px #9C9494;
+    color: #000;
+	.row {
+		 margin: 0 -20px;
+		 padding:15px;
+		li {
+		    width: 16.66667%;
+    		float: left;
+    		.dietary-block {
+    			margin:5px;
+    			background:#e7e7e7;
+    			font-size:0.8em;
+    			display:block;
+    			border-radius:4px;
+    			text-align:center;
+    			line-height:1em;
+    			min-height:150px;
+    			input {
+    			font-size:20px;
+    			text-align:center;
+    			}
+    			img {
+    			    margin: 10px 0;
+				    background: #fff;
+				    border-radius: 100%;
+				    width: 40px;
+    			}
+    			span {
+    				display:block;
+    			}
+    		}
+    		.dietary-block:before {
+    		content:'x';
+    		}
+		}
+	}
+	.row:nth-child(2) {
+	background:#f5f5f5;
+	}
+	select, input {
+		width:100%;
+	}
+}

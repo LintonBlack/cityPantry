@@ -1,0 +1,24 @@
+<section id="search">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 position-relative">
+                <h2  data-ng-bind="errorCount"></h2>
+                <div data-ng-show="errorCount">
+                  <ul class="message-panel error">
+                    <li data-ng-repeat="message in messages track by $index">
+                      <span data-ng-bind="message"></span>
+                    </li>
+                  </ul>
+                </div>
+                <search-directive 
+                        search-options="viewModel.searchOptions"
+                        packages-list="viewModel.packagesList"
+                        dietary-requirements="viewModel.dietaryRequirements",
+                        search = "viewModel.search"
+                        change-qte="viewModel.changeQte",
+                        error-count ="viewModel.errorCount">
+                </search-directive>
+            </div>
+        </div>
+    </div>
+</section>

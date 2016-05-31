@@ -1,0 +1,35 @@
+<div id="search" class="clearfix  block block-search">
+	<div class="row">
+		<h2>1. Choose a package</h2>
+		<select data-ng-options="item as item.label for item in packagesList track by item.packageId" data-ng-model="searchOptions.selectedHumanId"></select>	
+	</div>
+	<div class="row">
+		<h2>2. Quantity and budget</h2>
+		<div class="clearfix">
+			<div class="col-md-6">
+
+				<label for="search-headcount">Number of people</label>
+				<input id="search-headcount" data-ng-model="searchOptions.headCount" type="number"  data-ng-blur="searchOptions.headCount = searchOptions.headCount || 1"/>
+			</div>
+			<div class="col-md-6">	
+				<label for="search-budget">Budget per person</label>
+				<input id="search-budget" data-ng-model="searchOptions.budget" type="number"  data-ng-blur="searchOptions.budget = searchOptions.budget || 0"/>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<h2>3. Any dietary requirements?</h2>
+		<ul>
+			<li data-ng-repeat="dietary in dietaryRequirements">
+				<span class="dietary-block">
+					<input type="number" data-ng-init="dietary.quantity = 0" data-ng-model="dietary.quantity" data-ng-blur="dietary.quantity = dietary.quantity || 0" data-ng-change="changeQte(dietary)" />
+					<img class="cursor" data-ng-click="dietary.quantity = dietary.quantity+1" data-ng-src="https://citypantry.com/{{dietary.icon}}" />
+					<span data-ng-bind="dietary.name"></sapn></li>
+				</span>
+		</ul>
+	</div>
+	<div class="row margin-top-l">	
+		<a data-ng-hide="errorCount === true" href="#/details" class="btn btn-lg btn-primary all-width" >Find your meal</a>
+		<p class="message-panel error" data-ng-show="errorCount === true" href="#/details" class="btn btn-lg btn-primary all-width" >!Error occured (Number Of people < dietary requirements) </p>
+	</div>
+</div>
