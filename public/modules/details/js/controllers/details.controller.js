@@ -280,7 +280,7 @@ angular.module('details')
 
                 // Warn people if the budget doesn't cover the cost
                  if(viewModel.packageInfos.pricePerPerson > viewModel.searchOptions.budget) {
-                      viewModel.messages.push("Sorry, you're budget won't cover the cost for this package");
+                      viewModel.messages.push("Sorry, you're budget of "+ viewModel.searchOptions.budget +", won't cover the cost of the selected package");
                  }
 
                 //Dispatch if requirements
