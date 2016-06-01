@@ -4,19 +4,19 @@
 var DummyData = [
             {   
                 packageId : 2104,
-                label : 'packageA'
+                label : 'Example package 2104'
             },
             {   
                 packageId : 913,
-                label : 'packagB'
+                label : 'Example package 913'
             },
             {   
                 packageId : 6595,
-                label : 'packageC'
+                llabel : 'Example package 6595'
             },
             {   
                 packageId : 4767,
-                label : 'packageD'
+                label : 'Example package 4767'
             }
         ];
 
