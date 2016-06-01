@@ -12,7 +12,7 @@ var DummyData = [
             },
             {   
                 packageId : 6595,
-                llabel : 'Example package 6595'
+                label : 'Example package 6595'
             },
             {   
                 packageId : 4767,
