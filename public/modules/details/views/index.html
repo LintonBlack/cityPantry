@@ -2,11 +2,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 position-relative">
+                <div class="message-panel error">
+                    <ul>
+                        <li ng-repeat="message in viewModel.messages track by $index">
+                            <p data-ng-bind="message"></p>
+                        </li>
+                    </ul>
+                </div>
             <!--details directive-->            
                 <details-directive 
-                    items-selection="itemsSelection"
-                    package-infos ="packageInfos"
-                    messages ="messages"> 
+                    package-infos ="viewModel.packageInfos"> 
                 </details-directive>               
             </div>
         </div>

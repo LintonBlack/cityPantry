@@ -8,7 +8,7 @@ angular.module('details').config(['$stateProvider', function($stateProvider) {
             url: "/details",
             views: {
                 "": {
-                    controller: "DetailsCtrl",
+                    controller: "DetailsCtrl as viewModel",
                     templateUrl: "modules/details/views/index.html"
                 }
             }

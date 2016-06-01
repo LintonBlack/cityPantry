@@ -46,6 +46,7 @@ angular.module('search')
    		viewModel.searchOptions.budget = 0;
    		viewModel.searchOptions.headCount = 1;
         viewModel.searchOptions.dietaryRequirements =[];
+        viewModel.searchOptions.allDietaryRequirements =[];
 
         // Return dietary requirements
         // Might be put in a service        
@@ -56,7 +57,7 @@ angular.module('search')
 
                 } else {
                 var dietaryArray = results.data.dietaryRequirements
-
+                viewModel.searchOptions.allDietaryRequirements = dietaryArray;
                 //populate dietary options
                 viewModel.dietaryRequirements = [];
                 angular.forEach(dietaryArray, function(item) {                     
