@@ -222,13 +222,13 @@ angular.module('details')
                     headCount = parseInt(viewModel.searchOptions.headCount);                                  
                     if(headCount > parseInt(packages.maxPeople))
                     {
-                        viewModel.messages.push("Sorry, But this vendor provide catering for a maximum of "+packages.maxPeople);
+                        viewModel.messages.push("Sorry, But this vendor provide catering for a maximum of "+packages.maxPeople + "persons");
                         return;
                     };
 
                     if(headCount < parseInt(packages.minPeople))
                          {
-                        viewModel.messages.push("Sorry, But this vendor provide catering for a minimum of "+packages.minPeople);
+                        viewModel.messages.push("Sorry, But this vendor provide catering for a minimum of "+packages.minPeople + "persons");
                         return;
                     }; 
 

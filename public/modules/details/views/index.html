@@ -2,6 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 position-relative">
+                 <div class="text-center">
+                    <a href="/search" class="btn btn-lg btn-primary">Refine your search</a>
+                </div>
                 <div class="message-panel error">
                     <ul>
                         <li ng-repeat="message in viewModel.messages track by $index">
@@ -9,6 +12,7 @@
                         </li>
                     </ul>
                 </div>
+               
             <!--details directive-->            
                 <details-directive 
                     package-infos ="viewModel.packageInfos"> 
