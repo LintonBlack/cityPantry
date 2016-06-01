@@ -245,7 +245,7 @@ angular.module('details')
                                     //Dietaryrequirements
                                       hasDietaryRequirement = _hasDietaryRequirement(dietaryRequirements);                                   
                                       
-                                      
+                                      debugger
                                       //selected or unselected
                                       if(!packageItem.isUpgrade) {                                        
                                         _createPackages(viewModel.selectedItems,new Dish(packageItem.isUpgrade, packageItemQuantity, packageItem.price, option.name,hasDietaryRequirement, dietaryRequirements))                                        

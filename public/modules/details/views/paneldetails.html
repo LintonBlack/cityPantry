@@ -1,9 +1,12 @@
 <section class="block-details">
-    <header class="clearfix">
-        <div class="pull-left item-main-pict">
+    <header>
+        <div class="item-main-pict">
             <img ng-src="{{packageInfos.image}}" >
         </div>
-        <div class="pull-right item-main-infos">
+        <div class="item-main-infos">
+            <div class="item-main-price">
+               From &pound; <span data-ng-bind="packageInfos.pricePerPerson"></span>
+            </div>
             <ul>
                 <li class="item-main-title">
                     <h1 data-ng-bind="packageInfos.name"></h1>
@@ -30,14 +33,17 @@
            </div>
         </div>
     </article>
-    <article class="items items-unselected clearfix"  data-ng-repeat="item in packageInfos.unSelected" data-ng-show="packageInfos.unSelected.length > 0">
-        <div class="item-article-infos">
+    <div class="separator">
+        Upgrade
+    </div>
+    <article class="items items-unselected"  data-ng-repeat="item in packageInfos.unSelected" data-ng-show="packageInfos.unSelected.length > 0">
+        <div class="items-unselected-infos">
             <h2 class="item-article-name" data-ng-bind="item.name"></h2>
             <div> 
                 <span  data-ng-repeat="dietaryRequirements in item.dietaryRequirements">
                     <img data-ng-src="https://citypantry.com/{{dietaryRequirements.icon}}" />
-                </span>
-            </div>
+               </span>
+           </div>
         </div>
     </article>
 </section>
