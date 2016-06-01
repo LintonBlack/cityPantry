@@ -184,12 +184,14 @@ function Infos() {
 }
 
 angular.module('details')
-    .controller('DetailsCtrl', ['$scope','CoreService', function($scope, CoreService){
+    .controller('DetailsCtrl', ['$scope','CoreService','$location', function($scope, CoreService, $location){
         
         var viewModel = this;
 
         viewModel.searchOptions = CoreService.getSearchOptions();
         viewModel.messages = CoreService.getErrorMessage();
+
+
 
         viewModel.search = function() {
             // Get packages
@@ -287,6 +289,11 @@ angular.module('details')
            
         });
         }
-
-        viewModel.search();
+        //redirect if no search (should use localstorafge to store the last search)
+        if(viewModel.searchOptions.selectedHumanId) {
+           viewModel.search();
+         } else {
+            $location.path('/search');
+         }
+       
 }]);

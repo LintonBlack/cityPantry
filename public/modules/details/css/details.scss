@@ -13,8 +13,14 @@
 .block-details {
 	padding:10px;
 	background:#fff;
-	max-width:300px;
 	margin:0 auto;
+	.block-details-right {
+		width:70%;
+		margin-left:5%
+			}
+	.block-details-left {
+		width:25%;
+	}
 	header {
 		position:relative;
 		background:#3C3D3E;

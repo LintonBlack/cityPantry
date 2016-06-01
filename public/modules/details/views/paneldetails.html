@@ -1,49 +1,54 @@
-<section class="block-details">
-    <header>
-        <div class="item-main-pict">
-            <img ng-src="{{packageInfos.image}}" >
-        </div>
-        <div class="item-main-infos">
-            <div class="item-main-price">
-               From &pound; <span data-ng-bind="packageInfos.pricePerPerson"></span>
+<section class="block-details clearfix">
+    <section class="pull-left block-details-left">
+        <header>
+            <div class="item-main-infos">
+                <div class="item-main-price">
+                   From &pound; <span data-ng-bind="packageInfos.pricePerPerson"></span>
+                </div>
+                <ul>
+                    <li class="item-main-title">
+                        <h1 data-ng-bind="packageInfos.name"></h1>
+                    </li>
+                    <li class="item-main-description">
+                        <p data-ng-bind="packageInfos.description"></p>
+                    </li>
+                </ul>
             </div>
-            <ul>
-                <li class="item-main-title">
-                    <h1 data-ng-bind="packageInfos.name"></h1>
-                </li>
-                <li class="item-main-description">
-                    <p data-ng-bind="packageInfos.description"></p>
-                </li>
-            </ul>
+            <div class="item-main-pict">
+                <img ng-src="{{packageInfos.image}}" >
+            </div>
+            
+        </header>
+    </section>
+    <section class="pull-right block-details-right">
+        <article class="items items-selected clearfix"  data-ng-repeat="item in packageInfos.selected" data-ng-show="packageInfos.selected.length > 0">
+            <div class="item-article-qte">
+                <input data-ng-model="item.quantity"/>
+            </div>
+            <div class="item-article-multiply">
+                x
+            </div>
+            <div class="item-article-infos">
+                <h2 class="item-article-name" data-ng-bind="item.name"></h2>
+                <div> 
+                    <span  data-ng-repeat="dietaryRequirements in item.dietaryRequirements">
+                        <img data-ng-src="https://citypantry.com/{{dietaryRequirements.icon}}" />
+                   </span>
+               </div>
+            </div>
+        </article>
+        <div class="separator">
+            Upgrade
         </div>
-    </header>
-    <article class="items items-selected clearfix"  data-ng-repeat="item in packageInfos.selected" data-ng-show="packageInfos.selected.length > 0">
-        <div class="item-article-qte">
-            <input data-ng-model="item.quantity"/>
-        </div>
-        <div class="item-article-multiply">
-            x
-        </div>
-        <div class="item-article-infos">
-            <h2 class="item-article-name" data-ng-bind="item.name"></h2>
-            <div> 
-                <span  data-ng-repeat="dietaryRequirements in item.dietaryRequirements">
-                    <img data-ng-src="https://citypantry.com/{{dietaryRequirements.icon}}" />
-               </span>
-           </div>
-        </div>
-    </article>
-    <div class="separator">
-        Upgrade
-    </div>
-    <article class="items items-unselected"  data-ng-repeat="item in packageInfos.unSelected" data-ng-show="packageInfos.unSelected.length > 0">
-        <div class="items-unselected-infos">
-            <h2 class="item-article-name" data-ng-bind="item.name"></h2>
-            <div> 
-                <span  data-ng-repeat="dietaryRequirements in item.dietaryRequirements">
-                    <img data-ng-src="https://citypantry.com/{{dietaryRequirements.icon}}" />
-               </span>
-           </div>
-        </div>
-    </article>
+        <article class="items items-unselected"  data-ng-repeat="item in packageInfos.unSelected" data-ng-show="packageInfos.unSelected.length > 0">
+            <div class="items-unselected-infos">
+                <h2 class="item-article-name" data-ng-bind="item.name"></h2>
+                <div> 
+                    <span  data-ng-repeat="dietaryRequirements in item.dietaryRequirements">
+                        <img data-ng-src="https://citypantry.com/{{dietaryRequirements.icon}}" />
+                   </span>
+               </div>
+            </div>
+        </article>
+    </section>
 </section>
