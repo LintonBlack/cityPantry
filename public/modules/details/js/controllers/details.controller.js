@@ -251,9 +251,9 @@ angular.module('details')
                                   angular.forEach(options, function(option) {
                                     var dietaryRequirements = option.dietaryRequirements;
                                     //Dietaryrequirements
-                                      hasDietaryRequirement = _hasDietaryRequirement(dietaryRequirements);                                   
+                                      hasDietaryRequirement = _hasDietaryRequirement(dietaryRequirements);                                  
                                       
-                                      debugger
+                                      
                                       //selected or unselected
                                       if(!packageItem.isUpgrade) {                                        
                                         _createPackages(viewModel.selectedItems,new Dish(packageItem.isUpgrade, packageItemQuantity, packageItem.price, option.name,hasDietaryRequirement, dietaryRequirements))                                        
@@ -277,6 +277,11 @@ angular.module('details')
                   viewModel.unSelectedItems = createdArrays.upgradeItems;
 
                 };
+
+                // Warn people if the budget doesn't cover the cost
+                 if(viewModel.packageInfos.pricePerPerson > viewModel.searchOptions.budget) {
+                      viewModel.messages.push("Sorry, you're budget won't cover the cost for this package");
+                 }
 
                 //Dispatch if requirements
                 _Dispatch(viewModel.selectedItems,viewModel.searchOptions,viewModel.messages);
