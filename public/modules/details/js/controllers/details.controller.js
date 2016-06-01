@@ -230,7 +230,7 @@ angular.module('details')
                         return;
                     }; 
 
-                    //create a fn 
+                    //create a fn [TODO need refactoring] 
                    angular.forEach(arr, function(things) {
                         var packageItems = things.packageItems;
                         angular.forEach(packageItems, function(packageItem) {
