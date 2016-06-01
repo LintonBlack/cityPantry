@@ -115,7 +115,13 @@ function _DispatchWithDietary(arr, options,messages) {
                   
                   item.quantity++;
                   headCount = headCount -1; 
-             } 
+             }
+            // All some options have dietary requirement and an requirement can't be fullfilled so I increment all of them
+             if(item.hasDietaryRequirement && !canProvideRequirement && existingItemWithNoRequirement) {              
+                  
+                  item.quantity++;
+                  headCount = headCount -1; 
+             }  
           // All some options have dietary requirement
              if(item.hasDietaryRequirement && !existingItemWithNoRequirement) {            
                   item.quantity++;
