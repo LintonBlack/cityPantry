@@ -110,13 +110,13 @@ function _DispatchWithDietary(arr, options,messages) {
                   headCount = headCount -1;
                   existingItemWithNoRequirement = true;             
              } 
-          // All some options have dietary requirement and an requirement can't be fullfilled so I increment all of them
+          // All options have dietary requirement and a requirement can't be fullfilled so I increment all of them
              if(item.hasDietaryRequirement && !canProvideRequirement && !existingItemWithNoRequirement) {              
                   
                   item.quantity++;
                   headCount = headCount -1; 
              }
-            // All some options have dietary requirement and an requirement can't be fullfilled so I increment all of them
+            // some options have dietary requirement and a requirement can't be fullfilled so I increment all of them
              if(item.hasDietaryRequirement && !canProvideRequirement && existingItemWithNoRequirement) {              
                   
                   item.quantity++;
@@ -228,13 +228,13 @@ angular.module('details')
                     headCount = parseInt(viewModel.searchOptions.headCount);                                  
                     if(headCount > parseInt(packages.maxPeople))
                     {
-                        viewModel.messages.push("Sorry, But this vendor provide catering for a maximum of "+packages.maxPeople + "persons");
+                        viewModel.messages.push("Sorry, But this vendor provide catering for a maximum of "+packages.maxPeople + " people");
                         return;
                     };
 
                     if(headCount < parseInt(packages.minPeople))
                          {
-                        viewModel.messages.push("Sorry, But this vendor provide catering for a minimum of "+packages.minPeople + "persons");
+                        viewModel.messages.push("Sorry, But this vendor provide catering for a minimum of "+packages.minPeople + " people");
                         return;
                     }; 
 
